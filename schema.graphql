@@ -1,0 +1,17 @@
+interface Node {
+  id: ID!
+}
+
+type Query {
+  node(
+    id: ID!
+  ): Node
+  viewer: Viewer
+}
+
+type Viewer implements Node {
+  id: ID!
+  _id: String
+  foo: String
+  bar: String
+}
