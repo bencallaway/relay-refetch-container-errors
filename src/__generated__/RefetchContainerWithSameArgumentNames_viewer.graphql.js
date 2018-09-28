@@ -9,24 +9,24 @@
 /*::
 import type { ConcreteFragment } from 'relay-runtime';
 import type { FragmentReference } from "relay-runtime";
-declare export opaque type DefinedGloballyOnQuery_viewer$ref: FragmentReference;
-export type DefinedGloballyOnQuery_viewer = {|
+declare export opaque type RefetchContainerWithSameArgumentNames_viewer$ref: FragmentReference;
+export type RefetchContainerWithSameArgumentNames_viewer = {|
   +foo: ?string,
   +bar?: ?string,
-  +$refType: DefinedGloballyOnQuery_viewer$ref,
+  +$refType: RefetchContainerWithSameArgumentNames_viewer$ref,
 |};
 */
 
 
 const node/*: ConcreteFragment*/ = {
   "kind": "Fragment",
-  "name": "DefinedGloballyOnQuery_viewer",
+  "name": "RefetchContainerWithSameArgumentNames_viewer",
   "type": "Viewer",
   "metadata": null,
   "argumentDefinitions": [
     {
       "kind": "LocalArgument",
-      "name": "childFlag",
+      "name": "refetchFlag",
       "type": "Boolean!",
       "defaultValue": null
     }
@@ -42,7 +42,7 @@ const node/*: ConcreteFragment*/ = {
     {
       "kind": "Condition",
       "passingValue": true,
-      "condition": "childFlag",
+      "condition": "refetchFlag",
       "selections": [
         {
           "kind": "ScalarField",
@@ -56,5 +56,5 @@ const node/*: ConcreteFragment*/ = {
   ]
 };
 // prettier-ignore
-(node/*: any*/).hash = '0bc44dd6faa5eb87945e48df56ac2734';
+(node/*: any*/).hash = '833408ad6cfec5fa54b840ccf939de9b';
 module.exports = node;

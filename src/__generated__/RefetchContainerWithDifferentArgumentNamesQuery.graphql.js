@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash 2c4ee74ceb0f4f695e6906890037dc63
+ * @relayHash 1d1ae11fd50c4635e96d7618b857baf7
  */
 
 /* eslint-disable */
@@ -9,35 +9,35 @@
 
 /*::
 import type { ConcreteRequest } from 'relay-runtime';
-type DefinedLocallyOnFragment_viewer$ref = any;
-export type DefinedLocallyOnFragmentRefetchQueryVariables = {|
-  parentFlag: boolean
+type RefetchContainerWithDifferentArgumentNames_viewer$ref = any;
+export type RefetchContainerWithDifferentArgumentNamesQueryVariables = {|
+  queryFlag: boolean
 |};
-export type DefinedLocallyOnFragmentRefetchQueryResponse = {|
+export type RefetchContainerWithDifferentArgumentNamesQueryResponse = {|
   +viewer: ?{|
-    +$fragmentRefs: DefinedLocallyOnFragment_viewer$ref
+    +$fragmentRefs: RefetchContainerWithDifferentArgumentNames_viewer$ref
   |}
 |};
-export type DefinedLocallyOnFragmentRefetchQuery = {|
-  variables: DefinedLocallyOnFragmentRefetchQueryVariables,
-  response: DefinedLocallyOnFragmentRefetchQueryResponse,
+export type RefetchContainerWithDifferentArgumentNamesQuery = {|
+  variables: RefetchContainerWithDifferentArgumentNamesQueryVariables,
+  response: RefetchContainerWithDifferentArgumentNamesQueryResponse,
 |};
 */
 
 
 /*
-query DefinedLocallyOnFragmentRefetchQuery(
-  $parentFlag: Boolean!
+query RefetchContainerWithDifferentArgumentNamesQuery(
+  $queryFlag: Boolean!
 ) {
   viewer {
-    ...DefinedLocallyOnFragment_viewer_bZ8OP
+    ...RefetchContainerWithDifferentArgumentNames_viewer_1YGG1u
     id
   }
 }
 
-fragment DefinedLocallyOnFragment_viewer_bZ8OP on Viewer {
+fragment RefetchContainerWithDifferentArgumentNames_viewer_1YGG1u on Viewer {
   foo
-  bar @include(if: $parentFlag)
+  bar @include(if: $queryFlag)
 }
 */
 
@@ -45,7 +45,7 @@ const node/*: ConcreteRequest*/ = (function(){
 var v0 = [
   {
     "kind": "LocalArgument",
-    "name": "parentFlag",
+    "name": "queryFlag",
     "type": "Boolean!",
     "defaultValue": null
   }
@@ -53,13 +53,13 @@ var v0 = [
 return {
   "kind": "Request",
   "operationKind": "query",
-  "name": "DefinedLocallyOnFragmentRefetchQuery",
+  "name": "RefetchContainerWithDifferentArgumentNamesQuery",
   "id": null,
-  "text": "query DefinedLocallyOnFragmentRefetchQuery(\n  $parentFlag: Boolean!\n) {\n  viewer {\n    ...DefinedLocallyOnFragment_viewer_bZ8OP\n    id\n  }\n}\n\nfragment DefinedLocallyOnFragment_viewer_bZ8OP on Viewer {\n  foo\n  bar @include(if: $parentFlag)\n}\n",
+  "text": "query RefetchContainerWithDifferentArgumentNamesQuery(\n  $queryFlag: Boolean!\n) {\n  viewer {\n    ...RefetchContainerWithDifferentArgumentNames_viewer_1YGG1u\n    id\n  }\n}\n\nfragment RefetchContainerWithDifferentArgumentNames_viewer_1YGG1u on Viewer {\n  foo\n  bar @include(if: $queryFlag)\n}\n",
   "metadata": {},
   "fragment": {
     "kind": "Fragment",
-    "name": "DefinedLocallyOnFragmentRefetchQuery",
+    "name": "RefetchContainerWithDifferentArgumentNamesQuery",
     "type": "Query",
     "metadata": null,
     "argumentDefinitions": v0,
@@ -75,12 +75,12 @@ return {
         "selections": [
           {
             "kind": "FragmentSpread",
-            "name": "DefinedLocallyOnFragment_viewer",
+            "name": "RefetchContainerWithDifferentArgumentNames_viewer",
             "args": [
               {
                 "kind": "Variable",
-                "name": "childFlag",
-                "variableName": "parentFlag",
+                "name": "refetchFlag",
+                "variableName": "queryFlag",
                 "type": null
               }
             ]
@@ -91,7 +91,7 @@ return {
   },
   "operation": {
     "kind": "Operation",
-    "name": "DefinedLocallyOnFragmentRefetchQuery",
+    "name": "RefetchContainerWithDifferentArgumentNamesQuery",
     "argumentDefinitions": v0,
     "selections": [
       {
@@ -120,7 +120,7 @@ return {
           {
             "kind": "Condition",
             "passingValue": true,
-            "condition": "parentFlag",
+            "condition": "queryFlag",
             "selections": [
               {
                 "kind": "ScalarField",
@@ -138,5 +138,5 @@ return {
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '1475d543a1d51d515740464b01de664c';
+(node/*: any*/).hash = 'e95fda46cf0c36782e4e7ccc8471737c';
 module.exports = node;

@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash a96849904a5b5e6ca6f498b50bfddebf
+ * @relayHash 08e8cd830ff1b1e49e970fe49938145e
  */
 
 /* eslint-disable */
@@ -9,36 +9,35 @@
 
 /*::
 import type { ConcreteRequest } from 'relay-runtime';
-type DefinedGloballyOnQuery_viewer$ref = any;
-export type DefinedGloballyOnQueryQueryVariables = {|
-  parentFlag: boolean,
-  childFlag: boolean,
+type RefetchContainerWithDifferentArgumentNames_viewer$ref = any;
+export type RefetchContainerWithDifferentArgumentNamesRefetchQueryVariables = {|
+  refetchQueryFlag: boolean
 |};
-export type DefinedGloballyOnQueryQueryResponse = {|
+export type RefetchContainerWithDifferentArgumentNamesRefetchQueryResponse = {|
   +viewer: ?{|
-    +$fragmentRefs: DefinedGloballyOnQuery_viewer$ref
+    +$fragmentRefs: RefetchContainerWithDifferentArgumentNames_viewer$ref
   |}
 |};
-export type DefinedGloballyOnQueryQuery = {|
-  variables: DefinedGloballyOnQueryQueryVariables,
-  response: DefinedGloballyOnQueryQueryResponse,
+export type RefetchContainerWithDifferentArgumentNamesRefetchQuery = {|
+  variables: RefetchContainerWithDifferentArgumentNamesRefetchQueryVariables,
+  response: RefetchContainerWithDifferentArgumentNamesRefetchQueryResponse,
 |};
 */
 
 
 /*
-query DefinedGloballyOnQueryQuery(
-  $parentFlag: Boolean!
+query RefetchContainerWithDifferentArgumentNamesRefetchQuery(
+  $refetchQueryFlag: Boolean!
 ) {
   viewer {
-    ...DefinedGloballyOnQuery_viewer_bZ8OP
+    ...RefetchContainerWithDifferentArgumentNames_viewer_4xghln
     id
   }
 }
 
-fragment DefinedGloballyOnQuery_viewer_bZ8OP on Viewer {
+fragment RefetchContainerWithDifferentArgumentNames_viewer_4xghln on Viewer {
   foo
-  bar @include(if: $parentFlag)
+  bar @include(if: $refetchQueryFlag)
 }
 */
 
@@ -46,13 +45,7 @@ const node/*: ConcreteRequest*/ = (function(){
 var v0 = [
   {
     "kind": "LocalArgument",
-    "name": "parentFlag",
-    "type": "Boolean!",
-    "defaultValue": null
-  },
-  {
-    "kind": "LocalArgument",
-    "name": "childFlag",
+    "name": "refetchQueryFlag",
     "type": "Boolean!",
     "defaultValue": null
   }
@@ -60,13 +53,13 @@ var v0 = [
 return {
   "kind": "Request",
   "operationKind": "query",
-  "name": "DefinedGloballyOnQueryQuery",
+  "name": "RefetchContainerWithDifferentArgumentNamesRefetchQuery",
   "id": null,
-  "text": "query DefinedGloballyOnQueryQuery(\n  $parentFlag: Boolean!\n) {\n  viewer {\n    ...DefinedGloballyOnQuery_viewer_bZ8OP\n    id\n  }\n}\n\nfragment DefinedGloballyOnQuery_viewer_bZ8OP on Viewer {\n  foo\n  bar @include(if: $parentFlag)\n}\n",
+  "text": "query RefetchContainerWithDifferentArgumentNamesRefetchQuery(\n  $refetchQueryFlag: Boolean!\n) {\n  viewer {\n    ...RefetchContainerWithDifferentArgumentNames_viewer_4xghln\n    id\n  }\n}\n\nfragment RefetchContainerWithDifferentArgumentNames_viewer_4xghln on Viewer {\n  foo\n  bar @include(if: $refetchQueryFlag)\n}\n",
   "metadata": {},
   "fragment": {
     "kind": "Fragment",
-    "name": "DefinedGloballyOnQueryQuery",
+    "name": "RefetchContainerWithDifferentArgumentNamesRefetchQuery",
     "type": "Query",
     "metadata": null,
     "argumentDefinitions": v0,
@@ -82,12 +75,12 @@ return {
         "selections": [
           {
             "kind": "FragmentSpread",
-            "name": "DefinedGloballyOnQuery_viewer",
+            "name": "RefetchContainerWithDifferentArgumentNames_viewer",
             "args": [
               {
                 "kind": "Variable",
-                "name": "childFlag",
-                "variableName": "parentFlag",
+                "name": "refetchFlag",
+                "variableName": "refetchQueryFlag",
                 "type": null
               }
             ]
@@ -98,7 +91,7 @@ return {
   },
   "operation": {
     "kind": "Operation",
-    "name": "DefinedGloballyOnQueryQuery",
+    "name": "RefetchContainerWithDifferentArgumentNamesRefetchQuery",
     "argumentDefinitions": v0,
     "selections": [
       {
@@ -127,7 +120,7 @@ return {
           {
             "kind": "Condition",
             "passingValue": true,
-            "condition": "parentFlag",
+            "condition": "refetchQueryFlag",
             "selections": [
               {
                 "kind": "ScalarField",
@@ -145,5 +138,5 @@ return {
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = '052c1672790449a4f3d4e6ce40b3ca26';
+(node/*: any*/).hash = '80a89a8fcafb157d37149addc2787222';
 module.exports = node;

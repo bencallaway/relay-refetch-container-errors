@@ -1,6 +1,6 @@
 /**
  * @flow
- * @relayHash df919a6e84b184e85ec443d3ba6791e2
+ * @relayHash 7d8ee4f35f8dcaef18ac9c93588faa08
  */
 
 /* eslint-disable */
@@ -9,35 +9,35 @@
 
 /*::
 import type { ConcreteRequest } from 'relay-runtime';
-type DefinedLocallyOnFragment_viewer$ref = any;
-export type DefinedLocallyOnFragmentQueryVariables = {|
-  parentFlag: boolean
+type RefetchContainerWithSameArgumentNames_viewer$ref = any;
+export type RefetchContainerWithSameArgumentNamesQueryVariables = {|
+  queryFlag: boolean
 |};
-export type DefinedLocallyOnFragmentQueryResponse = {|
+export type RefetchContainerWithSameArgumentNamesQueryResponse = {|
   +viewer: ?{|
-    +$fragmentRefs: DefinedLocallyOnFragment_viewer$ref
+    +$fragmentRefs: RefetchContainerWithSameArgumentNames_viewer$ref
   |}
 |};
-export type DefinedLocallyOnFragmentQuery = {|
-  variables: DefinedLocallyOnFragmentQueryVariables,
-  response: DefinedLocallyOnFragmentQueryResponse,
+export type RefetchContainerWithSameArgumentNamesQuery = {|
+  variables: RefetchContainerWithSameArgumentNamesQueryVariables,
+  response: RefetchContainerWithSameArgumentNamesQueryResponse,
 |};
 */
 
 
 /*
-query DefinedLocallyOnFragmentQuery(
-  $parentFlag: Boolean!
+query RefetchContainerWithSameArgumentNamesQuery(
+  $queryFlag: Boolean!
 ) {
   viewer {
-    ...DefinedLocallyOnFragment_viewer_bZ8OP
+    ...RefetchContainerWithSameArgumentNames_viewer_1YGG1u
     id
   }
 }
 
-fragment DefinedLocallyOnFragment_viewer_bZ8OP on Viewer {
+fragment RefetchContainerWithSameArgumentNames_viewer_1YGG1u on Viewer {
   foo
-  bar @include(if: $parentFlag)
+  bar @include(if: $queryFlag)
 }
 */
 
@@ -45,7 +45,7 @@ const node/*: ConcreteRequest*/ = (function(){
 var v0 = [
   {
     "kind": "LocalArgument",
-    "name": "parentFlag",
+    "name": "queryFlag",
     "type": "Boolean!",
     "defaultValue": null
   }
@@ -53,13 +53,13 @@ var v0 = [
 return {
   "kind": "Request",
   "operationKind": "query",
-  "name": "DefinedLocallyOnFragmentQuery",
+  "name": "RefetchContainerWithSameArgumentNamesQuery",
   "id": null,
-  "text": "query DefinedLocallyOnFragmentQuery(\n  $parentFlag: Boolean!\n) {\n  viewer {\n    ...DefinedLocallyOnFragment_viewer_bZ8OP\n    id\n  }\n}\n\nfragment DefinedLocallyOnFragment_viewer_bZ8OP on Viewer {\n  foo\n  bar @include(if: $parentFlag)\n}\n",
+  "text": "query RefetchContainerWithSameArgumentNamesQuery(\n  $queryFlag: Boolean!\n) {\n  viewer {\n    ...RefetchContainerWithSameArgumentNames_viewer_1YGG1u\n    id\n  }\n}\n\nfragment RefetchContainerWithSameArgumentNames_viewer_1YGG1u on Viewer {\n  foo\n  bar @include(if: $queryFlag)\n}\n",
   "metadata": {},
   "fragment": {
     "kind": "Fragment",
-    "name": "DefinedLocallyOnFragmentQuery",
+    "name": "RefetchContainerWithSameArgumentNamesQuery",
     "type": "Query",
     "metadata": null,
     "argumentDefinitions": v0,
@@ -75,12 +75,12 @@ return {
         "selections": [
           {
             "kind": "FragmentSpread",
-            "name": "DefinedLocallyOnFragment_viewer",
+            "name": "RefetchContainerWithSameArgumentNames_viewer",
             "args": [
               {
                 "kind": "Variable",
-                "name": "childFlag",
-                "variableName": "parentFlag",
+                "name": "refetchFlag",
+                "variableName": "queryFlag",
                 "type": null
               }
             ]
@@ -91,7 +91,7 @@ return {
   },
   "operation": {
     "kind": "Operation",
-    "name": "DefinedLocallyOnFragmentQuery",
+    "name": "RefetchContainerWithSameArgumentNamesQuery",
     "argumentDefinitions": v0,
     "selections": [
       {
@@ -120,7 +120,7 @@ return {
           {
             "kind": "Condition",
             "passingValue": true,
-            "condition": "parentFlag",
+            "condition": "queryFlag",
             "selections": [
               {
                 "kind": "ScalarField",
@@ -138,5 +138,5 @@ return {
 };
 })();
 // prettier-ignore
-(node/*: any*/).hash = 'cc7d54a1a27bc5bafe0a0e40ee8c0159';
+(node/*: any*/).hash = 'eba7dddde226d7e9d7cbe6cff6fdbfce';
 module.exports = node;
